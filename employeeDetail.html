@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-3 col-sm-3 col-xs-3">
+    <div class="img-box"><img src="{{employee.img}}" class="img-rounded" width="100%" border="0"></div>
+  </div>
+  <div class="col-md-9 col-sm-9 col-xs-9">
+    <button class="btn btn-grey" data-ng-click="sendMessage()">Send Message!</button>
+    <div class="clear"></div>
+    <div class="rating"><span data-ng-repeat="i in getNumber(fullHearts) track by $index" class="glyphicon glyphicon-heart"></span><span data-ng-repeat="i in getNumber(emptyHearts) track by $index" class="glyphicon glyphicon-heart-empty"></span></div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="description-container">
+      <p>{{employee.Description}}</p>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <table class="custom-table table table-hover table-bordered table-striped">
+      <tr>
+        <th>Likes</th>
+        <th>Dislikes</th>
+      </tr>
+      <tr data-ng-repeat="i in getNumber(totalRows) track by $index">
+        <td>{{employee.Likes[$index]}}</td>
+        <td>{{employee.Dislikes[$index]}}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-md-12" data-ng-if="messages.length > 0">
+    <h3>Messages</h3>
+    <ul class="list-group">
+      <li class="list-group-item" data-ng-repeat="m in messages">{{m}}</li>
+    </ul>
+  </div>
+</div>

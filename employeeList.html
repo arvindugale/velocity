@@ -1,0 +1,7 @@
+<div class="box-menu">
+  <ul class="list-group">
+  	<li class="list-group-item" data-ng-class="{'active' : employee.id==selectedEmployee.id}" data-ng-repeat="employee in vm.employees | filter:$parent.searchQuery" data-ng-click="viewEmployee(employee)">
+  		{{employee.name}}<span class="glyphicon glyphicon-triangle-right pull-right" aria-hidden="true"></span>
+  	</li>
+  </ul>
+</div>
